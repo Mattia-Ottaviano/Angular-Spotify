@@ -8,6 +8,12 @@
     <h3>{{artist.genres}}</h3>
     <h2>Follower</h2>
     <h3>{{artist.followers.total}}</h3>
+    <h2>Albums</h2>
+    <div *ngFor="let t of artist.albums.items">
+        <a [routerLink]="['/albums', t.id]">
+            {{ t.name }}
+        </a>
+    </div>
     
     <p><a href (click)="back()">Back</a></p>
 </div>
